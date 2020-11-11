@@ -1,0 +1,15 @@
+# ignore .ds_store
+.DS_Store
+
+# ignore .terraform configuration
+**/.terraform/*
+
+# ignore all generated cluster files
+**/cluster
+
+# ignore all generated state files
+**/state
+
+# ignore auth files
+/cluster_setup/gcp/files/auth.json
+/cluster_setup/gcp/files/id_rsa.pub
