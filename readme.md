@@ -62,11 +62,11 @@ From the CKS Exam Curriculum repository, The exam will test domains and competen
 
 ### Exam News and Overview
 
--> ADD BLOG LINK
+[CNCF CKS Overview](https://www.stackrox.com/post/2020/11/what-is-cncf-certified-kubernetes-security-specialist-cks-exam-and-what-is-covered/)
 
 ### KubeCon Announcement and Preparation Tips
 
--> AVAILABLE POST KUBECON
+AVAILABLE POST KUBECON
 
 ## Curriculum
 
