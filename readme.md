@@ -31,7 +31,7 @@ This repository contains resources to build a Kubernetes cluster, and example qu
 study_guide/
 └ cluster_setup/
   └ Makefile
-  └ gcp   (coming soon)
+  └ gcp   -> Create a 1.19 cluster in GCP with RKE.
   └ aws   (coming soon)
   └ azure (coming soon)
 └ img/
@@ -62,11 +62,11 @@ From the CKS Exam Curriculum repository, The exam will test domains and competen
 
 ### Exam News and Overview
 
--> ADD BLOG LINK
+-> [KubeCon Announcement and Linux Foundation Update](https://www.stackrox.com/post/2020/11/cks-cncf-announcement-and-exam-study-tips/)
 
 ### KubeCon Announcement and Preparation Tips
 
--> AVAILABLE POST KUBECON
+-> [What is the Certified Kubernetes Security Specialist (CKS)?](https://www.stackrox.com/post/2020/11/what-is-cncf-certified-kubernetes-security-specialist-cks-exam-and-what-is-covered/)
 
 ## Curriculum
 
@@ -74,24 +74,16 @@ Below is the CKS curriculum broken down by its six sections. Each section has it
 
 ### Cluster Setup - 10% 
 
-<details><summary>Use Network security policies to restrict cluster level access</summary>
-  
-* [Network Policies](https://kubernetes.io/docs/concepts/services-networking/network-policies)
-* [An Introduction to Network Policies](https://medium.com/@reuvenharrison/an-introduction-to-kubernetes-network-policies-for-security-people-ba92dd4c809d)
-* [Get started with Kubernetes network policy](https://docs.projectcalico.org/security/kubernetes-network-policy)
-</details>
-
 <details><summary>Use CIS benchmark to review the security configuration of Kubernetes components (etcd, kubelet, kubedns, kubeapi)</summary>
-  
+
 * [CIS benchmark for Kubernetes](https://www.cisecurity.org/benchmark/kubernetes/)
 
 </summary>
 </details>
 
-<details><summary>Properly set up Ingress objects with security control</summary>
+<details><summary>Verify platform binaries before deploying</summary>
   
-* [Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/)
-
+* [Kubernetes platform binaries](https://github.com/kubernetes/kubernetes/releases)
 </details>
 
 <details><summary>Protect node metadata and endpoints</summary>
@@ -100,18 +92,25 @@ Below is the CKS curriculum broken down by its six sections. Each section has it
 
 </details>
 
+<details><summary>Use Network security policies to restrict cluster level access</summary>
+  
+* [Network Policies](https://kubernetes.io/docs/concepts/services-networking/network-policies)
+* [An Introduction to Network Policies](https://medium.com/@reuvenharrison/an-introduction-to-kubernetes-network-policies-for-security-people-ba92dd4c809d)
+* [Get started with Kubernetes network policy](https://docs.projectcalico.org/security/kubernetes-network-policy)
+</details>
+
+<details><summary>Properly set up Ingress objects with security control</summary>
+  
+* [Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/)
+
+</details>
+
 <details><summary>Minimize use of, and access to, GUI elements</summary>
   
 * [On Securing the Kubernetes Dashboard](https://blog.heptio.com/on-securing-the-kubernetes-dashboard-16b09b1b7aca)
-* 
-</details>
-
-<details><summary>Verify platform binaries before deploying</summary>
   
-* [Kubernetes platform binaries](https://github.com/kubernetes/kubernetes/releases)
 </details>
-
-### Cluster Hardening - 15%
+ ### Cluster Hardening - 15%
 
 <details><summary>Restrict access to Kubernetes API</summary>
 

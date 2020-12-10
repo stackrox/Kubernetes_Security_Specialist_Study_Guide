@@ -4,11 +4,41 @@ env_path_gcp_cluster=gcp/cluster
 
 # ------------ Azure Cluster Filepaths ----------------#
 env_path_az=az/state
-env_path_gcp_cluster=gcp/cluster
+env_path_az_cluster=az/cluster
 
 # ------------ AWS Cluster Filepaths ----------------#
 env_path_aws=aws/state
-env_path_gcp_cluster=gcp/cluster
+env_path_aws_cluster=aws/cluster
+
+# ------------ AWS Cluster Creation Commands----------------#
+
+.PHONY: aws-init
+aws-init: log-aws-init
+	@terraform init aws/
+
+.PHONY: aws-validate
+aws-validate: aws-init aws-validate 
+	@terraform validate aws/ && echo "OK"
+
+.PHONY: aws-plan
+aws-plan: log-aws-plan 
+	@terraform plan -state $(env_path_aws)/terraform.tfstate -out $(env_path_aws)/terraform.tfplan aws/ 
+
+.PHONY: aws-apply
+aws-apply: log-aws-apply aws-plan
+	@terraform apply -state-out $(env_path_aws)/terraform.tfstate $(env_path_aws)/terraform.tfplan
+
+.PHONY: aws-rke-up
+aws-rke-up: log-aws-rke-up
+	@rke up --config $(env_path_aws_cluster)/cluster.yml
+
+.PHONY: aws-rke-remove
+aws-rke-remove: log-aws-rke-remove
+	@rke remove --config $(env_path_aws_cluster)/cluster.yml
+
+.PHONY: aws-destroy
+aws-destroy: log-aws-destroy aws/ 
+		@terraform destroy -state $(env_path_aws)/terraform.tfstate
 
 # ------------ GCP Cluster Creation Commands----------------#
 
